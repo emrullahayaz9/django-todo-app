@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fill the todo duties</h1>
+    <h1 style="color:red">{% if boolean %}
+    {{error_message}}
+    {% endif %}
+</h1>
+    <form action="" method= "POST" novalidate>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="submit">
+    </form>
+    <hr>
+    <div>
+       <h1> Todo</h1>
+
+       {% for x in data %}
+       <p><strong> {{x.id}}:   {{x.header}}=</strong>  {{x.content}}   </p>
+        <div></div>
+        <hr>
+       
+       {% endfor %}
+    </div>
+</body>
+</html>
